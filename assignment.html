@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Function in HTML</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Natures Beauty</h1>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; margin-left: 12%; width: 80vw; overflow: hidden;" id="imageContainer"></div>
+
+    <script>
+      var imageUrls = [{
+          "image" : "/images/1.jpg"},{"image" :"/images/2.jpg"},
+          {"image" : "/images/3.jpg"},{"image" :"/images/10.jpg"},{"image" : "/images/4.jpg"},
+          {"image" : "/images/5.jpg"},{"image" : "/images/6.jpg"},{"image" : "/images/7.jpg"},
+          {"image" : "/images/8.jpg"},{"image" : "/images/9.jpg"},
+          {"image" : "/images/17.jpg"},{"image" : "/images/18.jpg"},{"image" : "/images/19.jpg"},{"image" : "/images/20.jpg"},
+          {"image" : "/images/21.jpg"},{"image" : "/images/22.jpg"},{"image" : "/images/20.jpg"},
+          {"image" : "/images/23.jpg"},{"image" : "/images/24.jpg"},{"image" : "/images/25.jpg"},
+      ];
+      var images = [];
+      imageUrls.forEach(function(imageUrl, index) {
+          var img = document.createElement('img');
+          img.src = imageUrl.image;
+          img.alt = "Image " + (index + 1);
+          img.style.width = "200px"; 
+          img.style.height = "200px"; 
+          img.style.marginRight = "40px";
+          img.style.marginBottom = "100px";
+          img.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)";
+          img.style.border = "1px solid black";
+          img.style.borderRadius = "6px";
+          img.style.cursor = "pointer";
+
+          images.push(img);
+      });
+      var outputDiv = document.getElementById('imageContainer');
+      images.forEach(function(img) {
+          outputDiv.appendChild(img);
+      });
+    </script>
+  </body>
+</html>
